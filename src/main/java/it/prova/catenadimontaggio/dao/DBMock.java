@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.prova.catenadimontaggio.builder.CatenaDiMontaggioBuilder;
 import it.prova.catenadimontaggio.model.Automobile;
 import it.prova.catenadimontaggio.model.SlotCatenaDiMontaggio;
 
@@ -16,7 +17,10 @@ public class DBMock {
 
 		try {
 
-			SlotCatenaDiMontaggio catena1 = new SlotCatenaDiMontaggio(1l, "Toyota", "Italia");
+			SlotCatenaDiMontaggio catena1 = CatenaDiMontaggioBuilder.newBuilder(1l)
+					.brand("Toyota")
+					.country("Italia")
+					.build();
 			Automobile automobile1 = new Automobile(1l, "Toyota Corallo", "Traliccio",
 					new SimpleDateFormat("dd/MM/yyyy").parse("04/06/2015"), catena1);
 			catena1.getAutomobili().add(automobile1);

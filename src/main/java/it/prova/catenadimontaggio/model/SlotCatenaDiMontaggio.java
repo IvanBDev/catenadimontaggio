@@ -1,22 +1,24 @@
 package it.prova.catenadimontaggio.model;
 
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class SlotCatenaDiMontaggio {
 	
 	private Long id;
 	private String brand;
 	private String country;
-	private ArrayList<Automobile> automobili = new ArrayList<Automobile>();
+	private List<Automobile> automobili = new ArrayList<Automobile>();
 	
-	public SlotCatenaDiMontaggio(String brand, String country, ArrayList<Automobile> automobili) {
+	public SlotCatenaDiMontaggio(String brand, String country, List<Automobile> automobili) {
 		super();
 		this.brand = brand;
 		this.country = country;
 		this.automobili = automobili;
 	}
 
-	public SlotCatenaDiMontaggio(Long id, String brand, String country, ArrayList<Automobile> automobili) {
+	public SlotCatenaDiMontaggio(Long id, String brand, String country, List<Automobile> automobili) {
 		super();
 		this.id = id;
 		this.brand = brand;
@@ -66,7 +68,7 @@ public class SlotCatenaDiMontaggio {
 		this.country = country;
 	}
 
-	public ArrayList<Automobile> getAutomobili() {
+	public List<Automobile> getAutomobili() {
 		return automobili;
 	}
 
