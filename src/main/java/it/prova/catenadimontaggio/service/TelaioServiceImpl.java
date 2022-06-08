@@ -10,7 +10,7 @@ public class TelaioServiceImpl implements TelaioService{
 	@Override
 	public void aggiuntaTelaio(Automobile automobileInput) {
 		// TODO Auto-generated method stub
-		System.out.println("Telaio: "+ automobileInput.getTelaio() +" aggiunto a "+ automobileInput);
+		System.out.println("Telaio: "+ automobileInput.getTelaio() +", aggiunto a "+ automobileInput);
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import it.prova.catenadimontaggio.builder.AutomobileBuilder;
 import it.prova.catenadimontaggio.model.Automobile;
 import it.prova.catenadimontaggio.model.SlotCatenaDiMontaggio;
 import it.prova.catenadimontaggio.service.CatenaDiMontaggioService;
@@ -27,7 +28,11 @@ public class CatenadimontaggioApplication implements CommandLineRunner{
 		SlotCatenaDiMontaggio catenaDiMontaggio = catenaDiMontaggioService.caricaCatenaDiMontaggio(1l);
 		
 		//Aggiungo una nuova Auto
-		Automobile nuovaAutomobile = new Automobile(4l, "Toyota Aygo X", "", new SimpleDateFormat("dd/MM/yyyy").parse("25/02/2022"));
+		Automobile nuovaAutomobile = AutomobileBuilder.newBuilder(4l)
+				.modello("Toyota Aygo X")
+				.telaio("Acciaio")
+				.dataProduzione(new SimpleDateFormat("dd/MM/yyyy").parse("25/02/2022"))
+				.build();
 		
 		//Aggiungo l'automobile alla catena di montaggio
 		catenaDiMontaggioService.aggiungiAutoACatenaDiMontaggio(catenaDiMontaggio, nuovaAutomobile);
